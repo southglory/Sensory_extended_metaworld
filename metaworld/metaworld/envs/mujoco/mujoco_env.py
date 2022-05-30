@@ -123,14 +123,22 @@ class MujocoEnv(gym.Env, abc.ABC):
                 "corner3, corner, corner2, topview, gripperPOV, behindGripper")
         assert camera_name in {"corner3", "corner", "corner2", 
             "topview", "gripperPOV", "behindGripper"}, assert_string
+        print("1")
         if not offscreen:
             self._get_viewer('human').render()
+            print("2")
         else:
+            # return self.sim.render(
+            #     *resolution,
+            #     mode='offscreen',
+            #     camera_name=camera_name
+            # )
             return self.sim.render(
                 *resolution,
                 mode='offscreen',
-                camera_name=camera_name
+                camera_name=camera_name,
             )
+            
 
     def close(self):
         if self.viewer is not None:

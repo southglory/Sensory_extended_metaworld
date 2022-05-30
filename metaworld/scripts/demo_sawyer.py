@@ -8,38 +8,38 @@ import argparse
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_assembly_peg import SawyerNutAssemblyEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_bin_picking import SawyerBinPickingEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_box_close import SawyerBoxCloseEnv
-from metaworld.envs.mujoco.sawyer_xyz.sawyer_box_open import SawyerBoxOpenEnv
+# from metaworld.envs.mujoco.sawyer_xyz.sawyer_box_open import SawyerBoxOpenEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_button_press import SawyerButtonPressEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_button_press_topdown import SawyerButtonPressTopdownEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_dial_turn import SawyerDialTurnEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_door import SawyerDoorEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_door_close import SawyerDoorCloseEnv
-from metaworld.envs.mujoco.sawyer_xyz.sawyer_door_hook import SawyerDoorHookEnv
+# from metaworld.envs.mujoco.sawyer_xyz.sawyer_door_hook import SawyerDoorHookEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_drawer_close import SawyerDrawerCloseEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_drawer_open import SawyerDrawerOpenEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_hammer import SawyerHammerEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_hand_insert import SawyerHandInsertEnv
-from metaworld.envs.mujoco.sawyer_xyz.sawyer_laptop_close import SawyerLaptopCloseEnv
+# from metaworld.envs.mujoco.sawyer_xyz.sawyer_laptop_close import SawyerLaptopCloseEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_lever_pull import SawyerLeverPullEnv
-from metaworld.envs.mujoco.sawyer_xyz.sawyer_multiple_objects import MultiSawyerEnv
+# from metaworld.envs.mujoco.sawyer_xyz.sawyer_multiple_objects import MultiSawyerEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_peg_insertion_side import SawyerPegInsertionSideEnv
-from metaworld.envs.mujoco.sawyer_xyz.sawyer_pick_and_place import SawyerPickAndPlaceEnv
-from metaworld.envs.mujoco.sawyer_xyz.sawyer_pick_and_place_wsg import SawyerPickAndPlaceWsgEnv
-from metaworld.envs.mujoco.sawyer_xyz.sawyer_push_and_reach_env import SawyerPushAndReachXYEnv
-from metaworld.envs.mujoco.sawyer_xyz.sawyer_push_and_reach_env_two_pucks import SawyerPushAndReachXYZDoublePuckEnv
-from metaworld.envs.mujoco.sawyer_xyz.sawyer_push_multiobj import SawyerTwoObjectEnv
-from metaworld.envs.mujoco.sawyer_xyz.sawyer_push_nips import SawyerPushAndReachXYEasyEnv
-from metaworld.envs.mujoco.sawyer_xyz.sawyer_reach import SawyerReachXYZEnv
-from metaworld.envs.mujoco.sawyer_xyz.sawyer_reach import SawyerReachEnv
+# from metaworld.envs.mujoco.sawyer_xyz.sawyer_pick_and_place import SawyerPickAndPlaceEnv
+# from metaworld.envs.mujoco.sawyer_xyz.sawyer_pick_and_place_wsg import SawyerPickAndPlaceWsgEnv
+# from metaworld.envs.mujoco.sawyer_xyz.sawyer_push_and_reach_env import SawyerPushAndReachXYEnv
+# from metaworld.envs.mujoco.sawyer_xyz.sawyer_push_and_reach_env_two_pucks import SawyerPushAndReachXYZDoublePuckEnv
+# from metaworld.envs.mujoco.sawyer_xyz.sawyer_push_multiobj import SawyerTwoObjectEnv
+# from metaworld.envs.mujoco.sawyer_xyz.sawyer_push_nips import SawyerPushAndReachXYEasyEnv
+# from metaworld.envs.mujoco.sawyer_xyz.sawyer_reach import SawyerReachXYZEnv
+# from metaworld.envs.mujoco.sawyer_xyz.sawyer_reach import SawyerReachEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_reach_push_pick_place import SawyerReachPushPickPlaceEnv
-from metaworld.envs.mujoco.sawyer_xyz.sawyer_rope import SawyerRopeEnv
+# from metaworld.envs.mujoco.sawyer_xyz.sawyer_rope import SawyerRopeEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_shelf_place import SawyerShelfPlaceEnv
-from metaworld.envs.mujoco.sawyer_xyz.sawyer_stack import SawyerStackEnv
+# from metaworld.envs.mujoco.sawyer_xyz.sawyer_stack import SawyerStackEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_stick_pull import SawyerStickPullEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_stick_push import SawyerStickPushEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_sweep import SawyerSweepEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_sweep_into_goal import SawyerSweepIntoGoalEnv
-from metaworld.envs.mujoco.sawyer_xyz.sawyer_throw import SawyerThrowEnv
+# from metaworld.envs.mujoco.sawyer_xyz.sawyer_throw import SawyerThrowEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_window_close import SawyerWindowCloseEnv
 from metaworld.envs.mujoco.sawyer_xyz.v1.sawyer_window_open import SawyerWindowOpenEnv
 
@@ -779,41 +779,41 @@ demos = {
     SawyerNutAssemblyEnv: sample_sawyer_assembly_peg,
     SawyerBinPickingEnv: sample_sawyer_bin_picking,
     SawyerBoxCloseEnv: sample_sawyer_box_close,
-    SawyerBoxOpenEnv: sample_sawyer_box_open,
+    # SawyerBoxOpenEnv: sample_sawyer_box_open,
     SawyerButtonPressEnv: sample_sawyer_button_press_6d0f,
     SawyerButtonPressTopdownEnv: sample_sawyer_button_press_topdown_6d0f,
     SawyerDialTurnEnv: sample_sawyer_dial_turn,
     SawyerDoorEnv: sample_sawyer_door,
     SawyerDoorCloseEnv: sample_sawyer_door_close,
-    SawyerDoorHookEnv: sample_sawyer_door_hook,
+    # SawyerDoorHookEnv: sample_sawyer_door_hook,
     SawyerDoorEnv: sample_sawyer_door,
     SawyerDrawerCloseEnv: sample_sawyer_drawer_close,
     SawyerDrawerOpenEnv: sample_sawyer_drawer_open,
     SawyerHammerEnv: sample_sawyer_hammer,
     SawyerHandInsertEnv: sample_sawyer_hand_insert,
-    SawyerLaptopCloseEnv: sample_sawyer_laptop_close,
+    # SawyerLaptopCloseEnv: sample_sawyer_laptop_close,
     SawyerLeverPullEnv: sample_sawyer_lever_pull,
-    MultiSawyerEnv: sample_sawyer_multiple_objects,
+    # MultiSawyerEnv: sample_sawyer_multiple_objects,
     SawyerPegInsertionSideEnv: sample_sawyer_peg_insertion_side,
-    SawyerPickAndPlaceEnv: sample_sawyer_pick_and_place,
-    SawyerPickAndPlaceEnv: sample_sawyer_pick_and_place,
-    SawyerPickAndPlaceWsgEnv: sample_sawyer_pick_and_place_wsg,
-    SawyerPushAndReachXYEnv: sample_sawyer_push_and_reach_env,
-    SawyerPushAndReachXYZDoublePuckEnv: sample_sawyer_push_and_reach_two_pucks,
-    SawyerTwoObjectEnv: sample_sawyer_push_multiobj,
-    SawyerTwoObjectEnv: sample_sawyer_push_multiobj,
-    SawyerPushAndReachXYEasyEnv: sample_sawyer_push_nips,
-    SawyerReachXYZEnv: sample_sawyer_reach,
-    SawyerReachEnv: sample_sawyer_reach,
+    # SawyerPickAndPlaceEnv: sample_sawyer_pick_and_place,
+    # SawyerPickAndPlaceEnv: sample_sawyer_pick_and_place,
+    # SawyerPickAndPlaceWsgEnv: sample_sawyer_pick_and_place_wsg,
+    # SawyerPushAndReachXYEnv: sample_sawyer_push_and_reach_env,
+    # SawyerPushAndReachXYZDoublePuckEnv: sample_sawyer_push_and_reach_two_pucks,
+    # SawyerTwoObjectEnv: sample_sawyer_push_multiobj,
+    # SawyerTwoObjectEnv: sample_sawyer_push_multiobj,
+    # SawyerPushAndReachXYEasyEnv: sample_sawyer_push_nips,
+    # SawyerReachXYZEnv: sample_sawyer_reach,
+    # SawyerReachEnv: sample_sawyer_reach,
     SawyerReachPushPickPlaceEnv: sample_sawyer_reach_push_pick_place,
-    SawyerRopeEnv: sample_sawyer_rope,
+    # SawyerRopeEnv: sample_sawyer_rope,
     SawyerShelfPlaceEnv: sample_sawyer_shelf_place,
-    SawyerStackEnv: sample_sawyer_stack,
+    # SawyerStackEnv: sample_sawyer_stack,
     SawyerStickPullEnv: sample_sawyer_stick_pull,
     SawyerStickPushEnv: sample_sawyer_stick_push,
     SawyerSweepEnv: sample_sawyer_sweep,
     SawyerSweepIntoGoalEnv: sample_sawyer_sweep_into_goal,
-    SawyerThrowEnv: sample_sawyer_throw,
+    # SawyerThrowEnv: sample_sawyer_throw,
     SawyerWindowCloseEnv: sample_sawyer_window_close,
     SawyerWindowOpenEnv: sample_sawyer_window_open,
 }

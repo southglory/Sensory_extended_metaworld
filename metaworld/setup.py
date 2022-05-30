@@ -1,6 +1,5 @@
 from setuptools import find_packages, setup
 
-
 # Required dependencies
 required = [
     # Please keep alphabetized
