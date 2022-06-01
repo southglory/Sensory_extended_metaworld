@@ -119,10 +119,10 @@ class MujocoEnv(gym.Env, abc.ABC):
                 self._did_see_sim_exception = True
 
     def render(self, offscreen=False, camera_name="corner2", resolution=(640, 480)):
-        assert_string = ("camera_name should be one of ",
-                "corner3, corner, corner2, topview, gripperPOV, behindGripper")
-        assert camera_name in {"corner3", "corner", "corner2", 
-            "topview", "gripperPOV", "behindGripper"}, assert_string
+        # assert_string = ("camera_name should be one of ",
+        #         "corner3, corner, corner2, topview, gripperPOV, behindGripper")
+        # assert camera_name in {"corner3", "corner", "corner2", 
+        #     "topview", "gripperPOV", "behindGripper"}, assert_string
         print("1")
         if not offscreen:
             self._get_viewer('human').render()
