@@ -3,7 +3,7 @@
 
 # Plots and figures
 scripts/figures/
-scripts/movies*
+scripts/movies/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
