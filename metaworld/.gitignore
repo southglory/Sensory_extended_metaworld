@@ -3,8 +3,9 @@ scripts/figures/
 scripts/movies*
 
 # Exception
-Sensory_extended_metaworld/metaworld/scripts/movies_my/**
 !Sensory_extended_metaworld/metaworld/scripts/movies_my/linemod_depth2.png
+
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
