@@ -91,7 +91,6 @@ class SawyerNutAssemblyEnv(SawyerXYZEnv):
         self.sim.model.body_pos[self.model.body_name2id('peg')] = peg_pos
         self.sim.model.site_pos[self.model.site_name2id('pegTop')] = self._target_pos
         self.maxPlacingDist = np.linalg.norm(np.array([self.obj_init_pos[0], self.obj_init_pos[1], self.heightTarget]) - np.array(self._target_pos)) + self.heightTarget
-
         return self._get_obs()
 
     def _reset_hand(self):

@@ -12,8 +12,10 @@ class SawyerNutAssemblyEnvV2(SawyerXYZEnv):
     def __init__(self):
         hand_low = (-0.5, 0.40, 0.05)
         hand_high = (0.5, 1, 0.5)
-        obj_low = (0, 0.6, 0.02)
-        obj_high = (0, 0.6, 0.02)
+        # obj_low = (0, 0.6, 0.02)
+        obj_low = (-0.9, -0.9, -0.9)
+        # obj_high = (0, 0.6, 0.02)
+        obj_high = (0.9, 0.9, 0.9)
         goal_low = (-0.1, 0.75, 0.1)
         goal_high = (0.1, 0.85, 0.1)
 
@@ -25,7 +27,8 @@ class SawyerNutAssemblyEnvV2(SawyerXYZEnv):
 
         self.init_config = {
             'obj_init_angle': 0.3,
-            'obj_init_pos': np.array([0, 0.6, 0.02], dtype=np.float32),
+            # 'obj_init_pos': np.array([0, 0.6, 0.02], dtype=np.float32),
+            'obj_init_pos': np.array([0.8, 0.8, 0.8], dtype=np.float32),
             'hand_init_pos': np.array((0, 0.6, 0.2), dtype=np.float32),
         }
         self.goal = np.array([0.1, 0.8, 0.1], dtype=np.float32)
@@ -184,3 +187,4 @@ class SawyerNutAssemblyEnvV2(SawyerXYZEnv):
             reward_in_place,
             success,
         )
+    
