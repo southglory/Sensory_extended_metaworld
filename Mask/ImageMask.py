@@ -67,7 +67,7 @@ while(True):
     while(start==False):
         imgName = str(input('img file: '))
         name = 'input_image/' + imgName + '.png'
-        sav_name = 'output_image/' + imgName + '.png'
+        sav_name = 'color_segmentation/' + imgName + '.png'
         start = True
         
     if(imgName=='break'):
