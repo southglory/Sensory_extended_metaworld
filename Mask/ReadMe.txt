@@ -10,6 +10,7 @@ color_segmentation : image will be saved automatically by segmenting with color 
 mask_image : image will be save automatically by masking with segmented color
 
 *********************** Run **************************
+User Control:
 (In the command window, run python ImageMask.py)
 python ImageMask.py
 
@@ -19,4 +20,12 @@ python ImageMask.py
 4. press "esc" button to go to the next image
 5. if you want to finish to segmenting the color of image, press esc and write "break"
 
-you can check the result at mask_image folder
+Auto:
+(In the command window, run python ImageMask_Auto.py)
+python ImageMask_Auto.py
+
+put all the image required to be masked in input_image folder
+
+
+*** you can check the result at mask_image folder
+
