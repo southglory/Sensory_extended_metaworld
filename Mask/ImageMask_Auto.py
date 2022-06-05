@@ -50,12 +50,12 @@ else:
     lb3 = np.array([hsv[0]-10, 30, 30])
     ub3 = np.array([hsv[0], 255, 255])
 
-imgOrg_path = 'input_image/'
+imgOrg_path = 'Mask/input_image/'
 file_lst = os.listdir(imgOrg_path)
 
 for file in file_lst:
     name = imgOrg_path + file
-    sav_name = 'color_segmentation/' + file
+    sav_name = 'Mask/color_segmentation/' + file
     img_color = cv.imread(name)
     height, width = img_color.shape[:2]
     img_color = cv.resize(img_color, (width, height), interpolation=cv.INTER_AREA)
@@ -74,8 +74,8 @@ for file in file_lst:
 # In[3]:
 
 
-imgSeg_path = "color_segmentation/"
-savePath = 'mask_image/'
+imgSeg_path = "Mask/color_segmentation/"
+savePath = 'Mask/mask_image/'
 file_lst = os.listdir(imgSeg_path)
 for file in file_lst:
     filepath = imgSeg_path + file
@@ -94,7 +94,7 @@ for file in file_lst:
 
 
 K = 10
-imgNof_path = 'mask_image/'
+imgNof_path = 'Mask/mask_image/'
 file_lst2 = os.listdir(imgSeg_path)
 for file in file_lst2:
     filepath = imgNof_path + file
@@ -128,7 +128,7 @@ for file in file_lst2:
     
     kernel = np.ones((5,5), np.uint8)
     result_image = cv.dilate(img, kernel, iterations = 1)
-    
+
     cv.imwrite(filepath, result_image)
 
 
