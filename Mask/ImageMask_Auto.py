@@ -147,5 +147,6 @@ for file in file_lst2:
         sys.exit()
     
     dst = cv.medianBlur(img, 3)
+    
     cv.imwrite(savName, dst)
 
