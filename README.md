@@ -1,4 +1,4 @@
-**Status:** Maintenance (expect bug fixes and minor updates)
+**Status:** Maintenance and development (expect bug fixes and minor updates)
 
 
 # Sensory_extended_metaworld
@@ -7,16 +7,19 @@ This project was forked from original metaworld repository. [Metaworld](https://
 
 ![image](https://user-images.githubusercontent.com/51065570/172418379-cf88c010-ef26-4d45-ad34-639f48969184.png)
 
-
+There exists a need to make a metaworld benchmark extension which get sensor data, not a absolute pose metric.
+Therefore, we suggest to use 6-dof pose estimation model like "[latentfusion](https://keunhong.com/publications/latentfusion/)" on pose estimation process. 
+We added RGB, and depth image pipeline into metaworld benchmark.
 
 ![image](https://user-images.githubusercontent.com/51065570/172418425-a32c2197-6650-4e6f-9c5e-d563b0f9d3ee.png)
 
+## Installation
 
+'''
+cd metaworld
+$follow Readme.MD
+'''
 
-UserWarning: WARN: Box bound precision lowered by casting to float32
-  logger.warn(f"Box bound precision lowered by casting to {self.dtype}") 에러 제거를 위해서,
-아래 방식으로 설치.
-pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 -f https://download.pytorch.org/whl/torch_stable.html
 
 ## Training
 
