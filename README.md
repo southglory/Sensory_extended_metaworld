@@ -15,10 +15,10 @@ We added RGB, and depth image pipeline into metaworld benchmark.
 
 ## Installation
 
-'''
+```
 cd metaworld
 $follow Readme.MD
-'''
+```
 
 
 ## Training
