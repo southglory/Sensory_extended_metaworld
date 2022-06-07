@@ -115,13 +115,34 @@ for file in file_lst:
     cv.imwrite(savName, dst)
 
 
+
 # In[4]:
+
+imgNof_path = 'mask_image/'
+file_lst2 = os.listdir(imgSeg_path)
+
+
+# In[5]:
+
+
+# morphological operations -- to make the image clear for segmentation clearly 
+for file in file_lst2:
+    filepath = imgNof_path + file
+    img = cv.imread(filepath, 0)
+    
+    kernel = np.ones((3,3), np.uint8)
+    result_image = cv.dilate(img, kernel, iterations = 1)
+    
+    cv.imwrite(filepath, result_image)
+    
+    
+# In[6]:
 
 
 # kmean segmentation
 K = 10
-imgNof_path = 'mask_image/'
-file_lst2 = os.listdir(imgSeg_path)
+#imgNof_path = 'mask_image/'
+#file_lst2 = os.listdir(imgSeg_path)
 for file in file_lst2:
     filepath = imgNof_path + file
     img = cv.imread(filepath)
@@ -144,7 +165,7 @@ for file in file_lst2:
     cv.imwrite(filepath, result_image)
 
 
-# In[5]:
+# In[7]:
 
 
 # morphological operations
@@ -158,7 +179,7 @@ for file in file_lst2:
     cv.imwrite(filepath, result_image)
 
 
-# In[6]:
+# In[8]:
 
 
 # remove noise again
