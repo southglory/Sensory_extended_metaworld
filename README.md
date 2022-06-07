@@ -58,7 +58,9 @@ installation with Readme.MD
 We have two choices: 
 1. Get depth image from metaworld directly.
 2. Get depth image from depth-renderer library.
+
 We recommend to use direct method using metaworld with mujoco.
+
 As a reference, we also added here another method using depth-renderer library.
 
 ## Mask making algorithm
