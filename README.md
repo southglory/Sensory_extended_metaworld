@@ -10,15 +10,20 @@ This project was forked from original metaworld repository. [Metaworld](https://
 There exists a need to make a metaworld benchmark extension which gets sensor data, not a absolute pose metric.
 Therefore, we suggest to use 6-dof pose estimation model like "[latentfusion](https://keunhong.com/publications/latentfusion/)" on pose estimation process. 
 
+![image](https://user-images.githubusercontent.com/51065570/172429197-12671c47-bb38-41d9-8deb-e3f75e434fb2.png)
 
 We added RGB, and depth image pipeline into metaworld benchmark.
 Since we are fixing bugs and problems at latentfusion modifying codes, as a temporary method, we suggest a CNN model based reinforcement learning using RGB, and depth images which come from metaworld task virtual multi-view cameras.
+
+![image](https://user-images.githubusercontent.com/51065570/172418425-a32c2197-6650-4e6f-9c5e-d563b0f9d3ee.png)
 
 As an ideal solution, we suggest attaching a pose estimation model into meta-world benchmark which now only supports absolutely known pose metric inputs.
 
 After entire development, many present meta-learning methods testing on meta-world benchmark could be applied at actual real world reinforcement learning problems.
 
-![image](https://user-images.githubusercontent.com/51065570/172418425-a32c2197-6650-4e6f-9c5e-d563b0f9d3ee.png)
+
+![image](https://user-images.githubusercontent.com/51065570/172428831-5e05c606-2028-497c-a87a-4c1a603d333f.png)
+
 
 ## Installation
 
@@ -35,6 +40,11 @@ installation with Readme.MD
 ```
 
 ```
+cd depth_renderer
+installation with Readme.MD
+```
+
+```
 cd MLP5_CNN
 installation with Readme.MD
 ```
@@ -44,11 +54,19 @@ cd Mask
 installation with Readme.MD
 ```
 
+## depth_renderer
+We have two choices: 
+1. Get depth image from metaworld directly.
+2. Get depth image from depth-renderer library.
+We recommend to use direct method using metaworld with mujoco.
+As a reference, we also added here another method using depth-renderer library.
+
 ## Mask making algorithm
 
 
 ## MLP5_CNN algorithm & Training
 
+![image](https://user-images.githubusercontent.com/51065570/172429384-946a8a6a-965c-4cee-9286-478f9b806aa2.png)
 
 
 ## Changelog
