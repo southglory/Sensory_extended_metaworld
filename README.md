@@ -13,6 +13,13 @@ This project was forked from original metaworld repository. [Metaworld](https://
 
 
 
+UserWarning: WARN: Box bound precision lowered by casting to float32
+  logger.warn(f"Box bound precision lowered by casting to {self.dtype}") 에러 제거를 위해서,
+아래 방식으로 설치.
+pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 -f https://download.pytorch.org/whl/torch_stable.html
+
+
+
 ## Changelog
 
 - 06/06/2022: We wrote Readme.md.
@@ -24,3 +31,19 @@ This project was forked from original metaworld repository. [Metaworld](https://
  - Sungwon Seo
  - Pyunghwa Shin
  - Changhyun Choi
+
+## Citing Meta-World
+If you use Meta-World for academic research, please kindly cite our CoRL 2019 paper the using following BibTeX entry.
+
+```
+@inproceedings{yu2019meta,
+  title={Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning},
+  author={Tianhe Yu and Deirdre Quillen and Zhanpeng He and Ryan Julian and Karol Hausman and Chelsea Finn and Sergey Levine},
+  booktitle={Conference on Robot Learning (CoRL)},
+  year={2019}
+  eprint={1910.10897},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG}
+  url={https://arxiv.org/abs/1910.10897}
+}
+```
