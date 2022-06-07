@@ -10,6 +10,7 @@ This project was forked from original metaworld repository. [Metaworld](https://
 There exists a need to make a metaworld benchmark extension which get sensor data, not a absolute pose metric.
 Therefore, we suggest to use 6-dof pose estimation model like "[latentfusion](https://keunhong.com/publications/latentfusion/)" on pose estimation process. 
 We added RGB, and depth image pipeline into metaworld benchmark.
+Since we are fixing bugs and problems at latentfusion modifying codes, as a temporary method, we suggest a CNN model based reinforcement learning using RGB, and depth images which come from metaworld task virtual multi-view cameras.
 
 ![image](https://user-images.githubusercontent.com/51065570/172418425-a32c2197-6650-4e6f-9c5e-d563b0f9d3ee.png)
 
@@ -27,7 +28,21 @@ cd latentfusion
 installation with Readme.MD
 ```
 
-## Training
+```
+cd MLP5_CNN
+installation with Readme.MD
+```
+
+```
+cd Mask
+installation with Readme.MD
+```
+
+## Mask making algorithm
+
+
+## MLP5_CNN algorithm & Training
+
 
 
 ## Changelog
