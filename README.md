@@ -61,7 +61,7 @@ We have two choices:
 
 We recommend to use direct method using metaworld with mujoco.
 
-As a reference, we also added here another method using depth-renderer library.
+As a reference, we also added here another method using [depth-renderer](https://github.com/yinyunie/depth_renderer) library.
 
 ## Mask making algorithm
 
@@ -117,3 +117,18 @@ If you find the LatentFusion code or data useful, please consider citing:
   year={2020}
 }
 ```
+
+## Citing depth_renderer
+This library is used for data preprocessing in our work SK-PCN. If you find it helpful, please consider citing
+
+@inproceedings{NEURIPS2020_ba036d22,
+ author = {Nie, Yinyu and Lin, Yiqun and Han, Xiaoguang and Guo, Shihui and Chang, Jian and Cui, Shuguang and Zhang, Jian.J},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {H. Larochelle and M. Ranzato and R. Hadsell and M. F. Balcan and H. Lin},
+ pages = {16119--16130},
+ publisher = {Curran Associates, Inc.},
+ title = {Skeleton-bridged Point Completion: From Global Inference to Local Adjustment},
+ url = {https://proceedings.neurips.cc/paper/2020/file/ba036d228858d76fb89189853a5503bd-Paper.pdf},
+ volume = {33},
+ year = {2020}
+}
