@@ -176,22 +176,3 @@ for file in file_lst2:
     
     dst = cv.medianBlur(img, 3)
     cv.imwrite(savName, dst)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
