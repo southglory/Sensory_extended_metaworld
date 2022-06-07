@@ -15,11 +15,17 @@ We added RGB, and depth image pipeline into metaworld benchmark.
 
 ## Installation
 
+Use [anaconda](https://www.anaconda.com/) virtual environment to run each sub-repository.
+
 ```
 cd metaworld
-$follow Readme.MD
+installation with Readme.MD
 ```
 
+```
+cd latentfusion
+installation with Readme.MD
+```
 
 ## Training
 
