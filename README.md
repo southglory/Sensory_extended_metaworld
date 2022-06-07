@@ -32,7 +32,7 @@ pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 -f https://download.pyto
  - Pyunghwa Shin
  - Changhyun Choi
 
-### Followings are metaworld citation, and acknowledgement
+## Followings are metaworld citation, and acknowledgement
 ## Citing Meta-World
 If you use Meta-World for academic research, please kindly cite our CoRL 2019 paper the using following BibTeX entry.
 
