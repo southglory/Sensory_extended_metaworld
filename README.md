@@ -53,7 +53,6 @@ installation with Readme.MD
 cd Mask
 installation with Readme.MD
 ```
-
 ## depth_renderer
 We have two choices: 
 1. Get depth image from metaworld directly.
@@ -63,7 +62,38 @@ We recommend to use direct method using metaworld with mujoco.
 
 As a reference, we also added here another method using [depth-renderer](https://github.com/yinyunie/depth_renderer) library.
 
+
 ## Mask making algorithm
+Mask making algorithm is based on the color segmentation by using the charateristic of input images, respectively. 
+- File List
+ folder: color_segmentation, input_image, mask_image
+ - input_image : put the original image (png format) that needs to be mask
+ - color_segmentation : image will be saved automatically by segmenting with color that users selected
+ - mask_image : image will be save automatically by masking with segmented color
+
+*********************** Run **************************
+There are two ways to run the "Mask making algorithm". 
+ImageMask.py makes user to select the color of object that needs to be maksed.  
+ImageMask_Auto.py makes the mask of image by selecting the red color of robot arm automatically.
+
+- User Control:
+  (In the command window, run python ImageMask.py)
+   python ImageMask.py
+
+   1. write the name of image file placed in input_image
+   2. click the color you wanted to segment the image
+   3. check whether it works desirly
+   4. press "esc" button to go to the next image
+   5. if you want to finish to segmenting the color of image, press esc and write "break"
+
+- Auto:
+  (In the command window, run python ImageMask_Auto.py)
+  python ImageMask_Auto.py
+
+  put all the image required to be masked in input_image folder
+
+*** you can check the result at mask_image folder
+
 
 
 ## MLP5_CNN algorithm & Training
