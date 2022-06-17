@@ -72,6 +72,7 @@ Mask making algorithm is based on the color segmentation by using the charateris
  - mask_image : image will be save automatically by masking with segmented color
 
 *********************** Run **************************
+
 There are two ways to run the "Mask making algorithm". 
 ImageMask.py makes user to select the color of object that needs to be maksed.  
 ImageMask_Auto.py makes the mask of image by selecting the red color of robot arm automatically.
