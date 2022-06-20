@@ -111,6 +111,11 @@ To run PPO agent, follow:
 cd metaworld
 python ppo_learn.py
 ```
+ * You can change agent's variables and environments in the code.
+ * cf) If you see "RuntimeError: failed to initialize OpenGL", then follow:
+ ```
+ unset LD_PRELOAD
+ ```
 
 
 ## Changelog
