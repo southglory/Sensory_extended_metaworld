@@ -53,6 +53,8 @@ installation with Readme.MD
 cd Mask
 installation with Readme.MD
 ```
+To run agent in our extension, you must install requirements that [original MetaWorld repository](https://github.com/rlworkgroup/metaworld) needs.
+
 ## depth_renderer
 We have two choices: 
 1. Get depth image from metaworld directly.
@@ -100,6 +102,15 @@ ImageMask_Auto.py makes the mask of image by selecting the red color of robot ar
 ## MLP5_CNN algorithm & Training
 
 ![image](https://user-images.githubusercontent.com/51065570/172429384-946a8a6a-965c-4cee-9286-478f9b806aa2.png)
+![actor](https://user-images.githubusercontent.com/62916482/174601953-c72d8cb9-1966-4618-b8d5-3191de6004f6.png)
+![critic](https://user-images.githubusercontent.com/62916482/174601984-d38d0ddf-62b9-4607-9a57-31520874dd11.png)
+
+
+To run PPO agent, follow:
+```
+cd metaworld
+python ppo_learn.py
+```
 
 
 ## Changelog
@@ -114,7 +125,7 @@ ImageMask_Auto.py makes the mask of image by selecting the red color of robot ar
  - Pyunghwa Shin
  - Changhyun Choi
 
-## Followings are Citation, and aAknowledgement
+## Followings are Citation, and Acknowledgement
 
 ## Citing Meta-World
 If you use Meta-World for academic research, please kindly cite our CoRL 2019 paper the using following BibTeX entry.
