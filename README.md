@@ -105,6 +105,7 @@ ImageMask_Auto.py makes the mask of image by selecting the red color of robot ar
 ![actor](https://user-images.githubusercontent.com/62916482/174601953-c72d8cb9-1966-4618-b8d5-3191de6004f6.png)
 ![critic](https://user-images.githubusercontent.com/62916482/174601984-d38d0ddf-62b9-4607-9a57-31520874dd11.png)
 
+This PPO agent does not use original MetaWorld states. It uses images with masking algorithm that we wrote above as state.
 
 To run PPO agent, follow:
 ```
