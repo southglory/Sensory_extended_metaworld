@@ -175,18 +175,19 @@ class Critic(Model):
 ## PPO 에이전트 클래스
 class PPOagent(object):
 
-    def __init__(self, env):
+    def __init__(self, env, batch_size, actor_lr, critic_lr, ratio_clipping, max_path_len, epoch):
 
         # 하이퍼파라미터
         self.GAMMA = 0.95
         self.GAE_LAMBDA = 0.9
-        self.BATCH_SIZE = 64
-        self.ACTOR_LEARNING_RATE = 0.001
-        self.CRITIC_LEARNING_RATE = 0.001
-        self.RATIO_CLIPPING = 0.1
-        self.EPOCHS = 10
         
-        self.max_path_len = 128
+        self.BATCH_SIZE = batch_size
+        self.ACTOR_LEARNING_RATE = actor_lr
+        self.CRITIC_LEARNING_RATE = critic_lr
+        self.RATIO_CLIPPING = ratio_clipping
+        self.EPOCHS = epoch
+        
+        self.max_path_len = max_path_len
 
         # 환경
         self.env = env
@@ -198,7 +199,7 @@ class PPOagent(object):
         # 행동의 최대 크기
         self.action_bound = env.action_space.high[0]
         # 표준편차의 최솟값과 최댓값 설정
-        self.std_bound = [1e-2, 1.0]
+        self.std_bound = [1e-3, 1]
 
         # 액터 신경망 및 크리틱 신경망 생성
         self.actor = Actor(self.action_dim, self.action_bound)
@@ -215,6 +216,8 @@ class PPOagent(object):
 
         # 에피소드에서 얻은 총 보상값을 저장하기 위한 변수
         self.save_epi_reward = []
+        
+        self.max_epi = 1356
 
 
     ## 로그-정책 확률밀도함수 계산
@@ -323,10 +326,9 @@ class PPOagent(object):
                 var_old = std_old ** 2
                 log_old_policy_pdf = -0.5 * (action - mu_old) ** 2 / var_old - 0.5 * np.log(var_old * 2 * np.pi)
                 log_old_policy_pdf = np.sum(log_old_policy_pdf)
-                # 다음 상태, 보상 관측
+                # We don't use original state
                 _, reward_scalar, done, _ = self.env.step(action)
                 reward_scalar *= 10
-                print("reward: ", reward_scalar)
                 img_list = []
                 for cam in camera:
                     if cam in ['corner', 'corner2', 'corner3']:
@@ -374,6 +376,7 @@ class PPOagent(object):
                     # 상태 업데이트
                     state = next_state
                     episode_reward += reward[0]
+                    print("reward: ", episode_reward)
                     time += 1
                     continue
 
@@ -410,20 +413,22 @@ class PPOagent(object):
                 
                 if done:
                     print("SUCCESS")
+                    self.actor.save_weights(f'save_weights/actor_{ep}_episodes_success_{_}_steps.h5')
+                    self.critic.save_weights(f'save_weights/critic_{ep}_episodes_success_{_}_steps.h5')
+                    np.savetxt(f'save_weights/epi_reward_{ep}_episodes_success_{_}_steps.txt', self.save_epi_reward)
                     break
 
             # 에피소드마다 결과 보상값 출력
             print('Episode: ', ep+1, 'Time: ', time, 'Reward: ', episode_reward)
             self.save_epi_reward.append(episode_reward)
 
-            # 에피소드 10번마다 신경망 파라미터를 파일에 저장
-            if ep % 10 == 0:
-                self.actor.save_weights("save_weights/actor.h5")
-                self.critic.save_weights("save_weights/critic.h5")
+            if self.max_epi < episode_reward:
+                self.actor.save_weights(f'save_weights/actor_{ep}_episodes.h5')
+                self.critic.save_weights(f'save_weights/critic_{ep}_episodes.h5')
+                np.savetxt(f'save_weights/epi_reward_{ep}_episodes.txt', self.save_epi_reward)
+                print(f'save: {ep} episode / {episode_reward} reward')
+                self.max_epi = episode_reward
 
-        # 학습이 끝난 후, 누적 보상값 저장
-        np.savetxt('save_weights/epi_reward.txt', self.save_epi_reward)
-        print(self.save_epi_reward)
 
 
     ## 에피소드와 누적 보상값을 그려주는 함수
@@ -464,8 +469,17 @@ with tf.device('/GPU:0'):
     env.set_task(task)
     
     
-    agent = PPOagent(env)
+    agent = PPOagent(env, 
+                     batch_size=64, 
+                     actor_lr=0.002,
+                     critic_lr=0.002,
+                     ratio_clipping=0.1,
+                     max_path_len=128,
+                     epoch=10)
+    
+    agent.load_weights('save_weights/')
+    
         
     agent.train(max_episode_num)
-    agent.plot_result()
+    
     
