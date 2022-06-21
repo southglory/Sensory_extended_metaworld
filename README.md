@@ -64,6 +64,9 @@ We recommend to use direct method using metaworld with mujoco.
 
 As a reference, we also added here another method using [depth-renderer](https://github.com/yinyunie/depth_renderer) library.
 
+If you face some problems, you can set the environment by referring to depth_renderer setting.txt file.
+
+And you can change the variables in settings_ours.py to suit your conditions.
 
 ## Mask making algorithm
 Mask making algorithm is based on the color segmentation by using the charateristic of input images, respectively. 
@@ -117,6 +120,20 @@ python ppo_learn.py
  ```
  unset LD_PRELOAD
  ```
+
+
+## LatentFusion
+We can use LatentFusion algorithm for obtaining depth images of reference images from Reconstruction and Rendering steps.
+
+![image](https://user-images.githubusercontent.com/84079247/174719456-9922f6b5-3203-4fc8-acb9-0fb50a01ce85.png)
+Reconstruction and Rendering pipeline is an end-to-end pipeline.
+The input is RGB images and segmentation masks, and the Latent Object is generated in the middle,
+and depth images and masks are output at the end. 
+Therefore, a depth image can be obtained for image based learning.
+
+![image](https://user-images.githubusercontent.com/84079247/174719671-1ecf3e2d-9abf-4f51-a0c9-2a8d48f477ea.png)
+For metric based learning, you can also use the pose estimation step to obtain object poses(rotation, translation)
+for unseen objects.
 
 
 ## Changelog
